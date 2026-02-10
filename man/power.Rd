@@ -3,35 +3,28 @@
 \docType{data}
 \name{power}
 \alias{power}
-\alias{power_3d}
-\title{power atlas}
+\title{Power Functional Network Cortical Parcellation}
 \format{
-An object of class \code{brain_atlas} of length 4.
-
-An object of class \code{ggseg3d_atlas} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 4 rows and 4 columns.
+A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (cortical).
 }
 \usage{
-power
-
-power_3d
+data(power)
 }
 \description{
-Brain-wide putative functional areas from resting state.
+Brain atlas for the Power cortical parcellation with 129 regions
+based on functional network organization of the human brain.
+Contains 2D polygon geometry for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}}.
 }
 \examples{
 data(power)
-data(power_3d)
+power
 }
 \references{
-Power, J. D., Cohen, A. L., Nelson, S. M., Wig, G. S., Barnes, K. A., 
-    Church, J. A., ... & Petersen, S. E. (2011). Functional network organization 
-    of the human brain. Neuron, 72(4), 665-678.
-    (\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3222858/}{PubMed})
-    
-\itemize{
- \item{power}{ - power atlas}
- \item{power_3d}{ - power 3d mesh atlas}
+Power JD, Cohen AL, Nelson SM, Wig GS, Barnes KA,
+Church JA, Vogel AC, Laumann TO, Miezin FM, Schlaggar BL,
+Petersen SE (2011). Functional Network Organization of the Human
+Brain. \emph{Neuron}, 72(4):665-678.
+\doi{10.1016/j.neuron.2011.09.006}
 }
-}
-\concept{ggseg_atlases ggseg3d_atlases}
+\concept{ggseg_atlases}
 \keyword{datasets}
