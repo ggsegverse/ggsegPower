@@ -13,6 +13,7 @@
 #'   \doi{10.1016/j.neuron.2011.09.006}
 #'
 #' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
 #' @export
 #' @examples
 #' power()

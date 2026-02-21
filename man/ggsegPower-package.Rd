@@ -13,8 +13,8 @@ Power functional network cortical parcellation atlas for the 'ggseg' ecosystem. 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegPower}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegPower/issues}
+  \item \url{https://github.com/ggsegverse/ggsegPower}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegPower/issues}
 }
 
 }
