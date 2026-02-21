@@ -1,29 +1,20 @@
-#' power atlas
+#' Power Functional Network Cortical Parcellation
 #'
-#' Brain-wide putative functional areas from resting state.
+#' Brain atlas for the Power cortical parcellation with 129 regions
+#' based on functional network organization of the human brain.
+#' Contains 2D polygon geometry for [ggseg::geom_brain()].
 #'
-#' @docType data
-#' @name power
-#' @keywords datasets
-#' @family ggseg_atlases ggseg3d_atlases
-#' @references Power, J. D., Cohen, A. L., Nelson, S. M., Wig, G. S., Barnes, K. A., 
-#'     Church, J. A., ... & Petersen, S. E. (2011). Functional network organization 
-#'     of the human brain. Neuron, 72(4), 665-678.
-#'     (\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3222858/}{PubMed})
-#'     
-#' \itemize{
-#'  \item{power}{ - power atlas}
-#'  \item{power_3d}{ - power 3d mesh atlas}
-#'}
+#' @family ggseg_atlases
 #'
-#' @import ggseg
-#' @import ggseg3d
-#' @rdname power
+#' @references Power JD, Cohen AL, Nelson SM, Wig GS, Barnes KA,
+#'   Church JA, Vogel AC, Laumann TO, Miezin FM, Schlaggar BL,
+#'   Petersen SE (2011). Functional Network Organization of the Human
+#'   Brain. *Neuron*, 72(4):665-678.
+#'   \doi{10.1016/j.neuron.2011.09.006}
+#'
+#' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
+#' @export
 #' @examples
-#' data(power)
-#' data(power_3d)
-"power"
-
-#' @rdname power
-"power_3d"
-
+#' power()
+power <- function() .power

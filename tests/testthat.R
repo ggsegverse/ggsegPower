@@ -1,5 +1,4 @@
 library(testthat)
+library(ggsegPower)
 
 test_check("ggsegPower")
-
-# covr::zero_coverage(covr::package_coverage("."))
