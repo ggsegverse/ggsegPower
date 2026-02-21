@@ -10,7 +10,6 @@ Description: Power functional network cortical parcellation atlas for the
     geometry for use with 'ggseg'.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Depends:
     R (>= 3.5),
     ggseg.formats
