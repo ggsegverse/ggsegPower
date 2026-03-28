@@ -69,3 +69,10 @@ ggplot() +
 Please note that the ‘ggsegPower’ project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
 this project, you agree to abide by its terms.
+
+## Data source
+
+Power annotation files on fsaverage5.
+
+- **Reference**: Power et al. (2011) [doi:10.1016/j.neuron.2011.09.006](https://doi.org/10.1016/j.neuron.2011.09.006)
+- **Date obtained**: 2021-10-15
