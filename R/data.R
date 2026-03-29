@@ -17,4 +17,5 @@
 #' @export
 #' @examples
 #' power()
+#' plot(power())
 power <- function() .power
