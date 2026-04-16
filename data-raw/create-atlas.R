@@ -89,8 +89,9 @@ p <- ggseg(atlas = atlas,
   hexSticker::theme_transparent()
 
 lapply(c("png", "svg"), function(x) {
-  hexSticker::sticker(p,
-                      package = "ggsegPower",
+  hexSticker::sticker(
+    p,
+    package = "ggsegPower",
                       filename = sprintf("man/figures/logo.%s", x),
                       s_y = 1.2,
                       s_x = 1,
