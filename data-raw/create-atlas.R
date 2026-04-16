@@ -92,17 +92,17 @@ lapply(c("png", "svg"), function(x) {
   hexSticker::sticker(
     p,
     package = "ggsegPower",
-                      filename = sprintf("man/figures/logo.%s", x),
-                      s_y = 1.2,
-                      s_x = 1,
-                      s_width = 1.5,
-                      s_height = 1.5,
-                      p_family = "mono",
-                      p_size = 10,
-                      p_color = "grey30",
-                      p_y = .6,
-                      h_fill = "white",
-                      h_color = "grey30"
+    filename = sprintf("man/figures/logo.%s", x),
+    s_y = 1.2,
+    s_x = 1,
+    s_width = 1.5,
+    s_height = 1.5,
+    p_family = "mono",
+    p_size = 10,
+    p_color = "grey30",
+    p_y = .6,
+    h_fill = "white",
+    h_color = "grey30"
   )
 })
 
