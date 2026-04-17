@@ -38,10 +38,12 @@ We recommend installing the ggseg-atlases through the ggseg [r-universe](https:/
 ```{r}
 #| label: install-r-universe
 #| eval: false
-options(repos = c(
-  ggseg = "https://ggseg.r-universe.dev",
-  CRAN = "https://cloud.r-project.org"
-))
+options(
+  repos = c(
+    ggseg = "https://ggseg.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"
+  )
+)
 
 install.packages("ggsegPower")
 ```
@@ -69,7 +71,6 @@ ggplot() +
     position = position_brain(hemi ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = power()$palette, na.value = "grey") +
   theme_void()
 ```
 

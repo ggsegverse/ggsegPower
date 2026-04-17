@@ -11,13 +11,14 @@ annot_name <- "power"
 
 # You might need to convert the annotation file
 # convert atlas to fsaverage5
-lapply(c("lh", "rh"),
-       function(x){
-         mri_surf2surf_rereg(subject = "fsaverage",
-                             annot = annot_name,
-                             hemi = x,
-                             output_dir = here::here("data-raw/fsaverage5/"))
-       })
+lapply(c("lh", "rh"), function(x) {
+  mri_surf2surf_rereg(
+    subject = "fsaverage",
+    annot = annot_name,
+    hemi = x,
+    output_dir = here::here("data-raw/fsaverage5/")
+  )
+})
 
 
 # Make  3d ----
@@ -35,10 +36,12 @@ ggseg3d(atlas  = power_3d)
 power_n <- power_3d
 power_n <- unnest(power_n, ggseg_3d)
 power_n <- mutate(power_n,
-                    region = gsub("LH_|RH_|region_", "", region),
-                    region = ifelse(grepl("Unknown|\\?", region, ignore.case = TRUE), 
-                                    NA, region),
-                    atlas = "power_3d"
+  region = gsub("LH_|RH_|region_", "", region),
+  region = ifelse(
+    grepl("Unknown|\\?", region, ignore.case = TRUE),
+    NA, region
+  ),
+  atlas = "power_3d"
 )
 power_3d <- as_ggseg3d_atlas(power_n)
 ggseg3d(atlas  = power_3d)
@@ -51,24 +54,24 @@ devtools::load_all(".")
 
 
 # Make 2d polygon ----
-power <- make_ggseg3d_2_ggseg(power_3d, 
+power <- make_ggseg3d_2_ggseg(power_3d,
                               steps = 6:7,
                               tolerance = .5,
                               output_dir = here::here("data-raw/"))
 
 plot(power)
 
-power %>%
+power |>
   ggseg(atlas = ., show.legend = TRUE,
         colour = "black",
-        mapping = aes(fill=region)) +
+        mapping = aes(fill = region)) +
   scale_fill_brain("power", package = "ggsegPower", na.value = "black")
 
 
 usethis::use_data(power, power_3d,
                   internal = FALSE,
                   overwrite = TRUE,
-                  compress="xz")
+                  compress = "xz")
 
 
 # make hex ----
@@ -80,27 +83,27 @@ p <- ggseg(atlas = atlas,
            show.legend = FALSE,
            colour = "grey30",
            size = .2,
-           mapping = aes(fill =  region)) +
+           mapping = aes(fill = region)) +
   scale_fill_brain2(palette = atlas$palette) +
   theme_void() +
   hexSticker::theme_transparent()
 
-lapply(c("png", "svg"), function(x){
-  hexSticker::sticker(p,
-                      package = "ggsegPower",
-                      filename = sprintf("man/figures/logo.%s", x),
-                      s_y = 1.2,
-                      s_x = 1,
-                      s_width = 1.5,
-                      s_height = 1.5,
-                      p_family = "mono",
-                      p_size = 10,
-                      p_color = "grey30",
-                      p_y = .6,
-                      h_fill = "white",
-                      h_color = "grey30"
+lapply(c("png", "svg"), function(x) {
+  hexSticker::sticker(
+    p,
+    package = "ggsegPower",
+    filename = sprintf("man/figures/logo.%s", x),
+    s_y = 1.2,
+    s_x = 1,
+    s_width = 1.5,
+    s_height = 1.5,
+    p_family = "mono",
+    p_size = 10,
+    p_color = "grey30",
+    p_y = .6,
+    h_fill = "white",
+    h_color = "grey30"
   )
-  
 })
 
 pkgdown::build_favicons(overwrite = TRUE)

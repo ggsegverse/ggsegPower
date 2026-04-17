@@ -16,6 +16,7 @@ Contains 2D polygon geometry for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}
 }
 \examples{
 power()
+plot(power())
 }
 \references{
 Power JD, Cohen AL, Nelson SM, Wig GS, Barnes KA,
@@ -24,4 +25,5 @@ Petersen SE (2011). Functional Network Organization of the Human
 Brain. \emph{Neuron}, 72(4):665-678.
 \doi{10.1016/j.neuron.2011.09.006}
 }
+\concept{cortical_atlases}
 \concept{ggseg_atlases}

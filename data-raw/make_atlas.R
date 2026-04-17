@@ -12,10 +12,15 @@ power <- create_cortical_from_annotation(
   input_annot = annot_files,
   atlas_name = "power",
   output_dir = "data-raw",
-  skip_existing = TRUE,
+  skip_existing = FALSE,
   cleanup = FALSE
 ) |>
   atlas_region_contextual("unknown|Unknown", "label")
+
+power <- power |>
+  atlas_region_rename(".", function(r) {
+    sub("^[LR]H_region_", "", r)
+  })
 
 print(power)
 plot(power)
