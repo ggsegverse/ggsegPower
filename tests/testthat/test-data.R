@@ -9,9 +9,6 @@ describe("power atlas", {
   })
 
   it("renders with ggseg", {
-    skip_if_not_installed("ggseg")
-    skip_if_not_installed("ggplot2")
-    skip_if_not_installed("vdiffr")
     p <- ggplot2::ggplot() +
       ggseg::geom_brain(
         atlas = power(),
@@ -25,7 +22,6 @@ describe("power atlas", {
   })
 
   it("renders with ggseg3d", {
-    skip_if_not_installed("ggseg3d")
     skip_if_not_installed("ggseg.meshes")
     p <- ggseg3d::ggseg3d(atlas = power())
     expect_s3_class(p, c("plotly", "htmlwidget"))
