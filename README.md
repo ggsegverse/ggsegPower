@@ -1,44 +1,69 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggsegPower
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+# ggsegPower <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ggsegverse/ggsegPower/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegPower/actions/workflows/R-CMD-check.yaml)
-[![r-universe](https://ggsegverse.r-universe.dev/badges/ggsegPower)](https://ggsegverse.r-universe.dev/ggsegPower)
+[![r-universe](https://ggseg.r-universe.dev/badges/ggsegPower.png)](https://ggseg.r-universe.dev/ggsegPower)
 <!-- badges: end -->
 
-Power Atlas for the ggsegverse Ecosystem.
+This package contains dataset for plotting the Power atlas for ggseg.
+
+Power JD, Cohen AL, Nelson SM, Wig GS, Barnes KA, Church JA, … &
+Petersen SE (2011). Functional network organization of the human brain.
+*Neuron*, 72(4), 665-678.
+[PubMed](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3222858/)
 
 ## Installation
 
-``` r
-# From r-universe
-install.packages("ggsegPower", repos = "https://ggsegverse.r-universe.dev")
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
 
-# From GitHub
-# install.packages("remotes")
-remotes::install_github("ggsegverse/ggsegPower")
+``` r
+options(repos = c(
+  ggseg = "https://ggseg.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+install.packages("ggsegPower")
 ```
 
-## Atlases
-
-### power
-
-Power cortical parcellation.
+You can install this package from [GitHub](https://github.com/) with:
 
 ``` r
+# install.packages("pak")
+pak::pak("ggsegverse/ggsegPower")
+```
+
+## Power atlas
+
+``` r
+library(ggseg)
 library(ggsegPower)
-plot(power())
+#> 
+#> Attaching package: 'ggsegPower'
+#> The following object is masked from 'package:stats':
+#> 
+#>     power
+library(ggplot2)
+
+ggplot() +
+  geom_brain(
+    atlas = power(),
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  theme_void()
 ```
 
-<img src="man/figures/README-power-1.png" alt="" width="100%" /> \##
-Data source
+<img src="man/figures/README-power-1.png" style="width:100.0%" />
 
-Annotation files on fsaverage5.
+## Data source
 
-- **Reference**: Power et al. (2011)
-  [doi:10.1016/j.neuron.2011.09.006](https://doi.org/10.1016/j.neuron.2011.09.006)
-
-- **Date obtained**: 2021-10-15
+Power JD, Cohen AL, Nelson SM, Wig GS, Barnes KA, Church JA, … &
+Petersen SE (2011). Functional network organization of the human brain.
+*Neuron*, 72(4), 665-678.
