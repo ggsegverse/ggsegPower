@@ -59,6 +59,7 @@ pak::pak("ggsegverse/ggsegPower")
 #| label: power
 #| fig-height: 7
 library(ggseg)
+library(ggsegPower)
 
 plot(power())
 ```

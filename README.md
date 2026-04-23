@@ -10,7 +10,8 @@
 [![r-universe](https://ggseg.r-universe.dev/badges/ggsegPower.png)](https://ggseg.r-universe.dev/ggsegPower)
 <!-- badges: end -->
 
-This package contains dataset for plotting the Power atlas for ggseg.
+This package contains dataset for plotting the Power atlas for
+ggsegverse.
 
 Power JD, Cohen AL, Nelson SM, Wig GS, Barnes KA, Church JA, … &
 Petersen SE (2011). Functional network organization of the human brain.
@@ -48,16 +49,8 @@ library(ggsegPower)
 #> The following object is masked from 'package:stats':
 #> 
 #>     power
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = power(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  theme_void()
+plot(power())
 ```
 
 <img src="man/figures/README-power-1.png" style="width:100.0%" />
