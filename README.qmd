@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 [![DOI](https://zenodo.org/badge/417497619.svg)](https://zenodo.org/badge/latestdoi/417497619)
 <!-- badges: end -->
 
-This package contains dataset for plotting the Power atlas for ggseg.
+This package contains dataset for plotting the Power atlas for ggsegverse.
 
 Power, J. D., Cohen, A. L., Nelson, S. M., Wig, G. S., Barnes, K. A., Church, J. A., ... & Petersen, S. E. (2011). Functional network organization of the human brain. Neuron, 72(4), 665-678.
 [PubMed](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3222858/)
@@ -62,16 +62,8 @@ remotes::install_github("ggseg/ggsegPower")
 #| fig-height: 7
 library(ggsegPower)
 library(ggseg)
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = power(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  theme_void()
+plot(power())
 ```
 
 Please note that the 'ggsegPower' project is released with a

@@ -1,44 +1,65 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggsegPower
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+# ggsegPower <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ggsegverse/ggsegPower/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegPower/actions/workflows/R-CMD-check.yaml)
-[![r-universe](https://ggsegverse.r-universe.dev/badges/ggsegPower)](https://ggsegverse.r-universe.dev/ggsegPower)
+[![R-CMD-check](https://github.com/ggseg/ggsegPower/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegPower/actions)
+[![DOI](https://zenodo.org/badge/417497619.svg)](https://zenodo.org/badge/latestdoi/417497619)
 <!-- badges: end -->
 
-Power Atlas for the ggsegverse Ecosystem.
+This package contains dataset for plotting the Power atlas for
+ggsegverse.
+
+Power, J. D., Cohen, A. L., Nelson, S. M., Wig, G. S., Barnes, K. A.,
+Church, J. A., … & Petersen, S. E. (2011). Functional network
+organization of the human brain. Neuron, 72(4), 665-678.
+[PubMed](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3222858/)
+
+To learn how to use these atlases, please look at the documentation for
+[ggseg](https://ggseg.github.io/ggseg/)
 
 ## Installation
 
-``` r
-# From r-universe
-install.packages("ggsegPower", repos = "https://ggsegverse.r-universe.dev")
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
 
-# From GitHub
-# install.packages("remotes")
-remotes::install_github("ggsegverse/ggsegPower")
+``` r
+options(
+  repos = c(
+    ggseg = "https://ggseg.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"
+  )
+)
+
+install.packages("ggsegPower")
 ```
 
-## Atlases
+You can install from [GitHub](https://github.com/) with:
 
-### power
+``` r
+# install.packages("remotes")
+remotes::install_github("ggseg/ggsegPower")
+```
 
-Power cortical parcellation.
+## Example
 
 ``` r
 library(ggsegPower)
+#> 
+#> Attaching package: 'ggsegPower'
+#> The following object is masked from 'package:stats':
+#> 
+#>     power
+library(ggseg)
+
 plot(power())
 ```
 
-<img src="man/figures/README-power-1.png" alt="" width="100%" /> \##
-Data source
+<img src="man/figures/README-2d-plot-1.png" style="width:100.0%" />
 
-Annotation files on fsaverage5.
-
-- **Reference**: Power et al. (2011)
-  [doi:10.1016/j.neuron.2011.09.006](https://doi.org/10.1016/j.neuron.2011.09.006)
-
-- **Date obtained**: 2021-10-15
+Please note that the ‘ggsegPower’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
